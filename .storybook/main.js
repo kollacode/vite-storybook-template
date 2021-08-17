@@ -17,7 +17,6 @@ module.exports = {
       path: require.resolve('path-browserify'),
     })
     config.plugins.push(...plugins)
-    console.log(config.alias)
     return config;
   },
 }
