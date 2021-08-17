@@ -1,13 +1,12 @@
 <template>
   <el-upload
-  class="upload-demo"
-  action=""
-  drag
   :file-list="fileList"
-  multiple
-  :auto-upload="false"
   :on-change="onChange"
   :on-remove="onChange"
+  :auto-upload="false"
+  multiple
+  drag
+  action=""
 >
   <i class="el-icon-upload"></i>
   <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
@@ -24,19 +23,28 @@ import {ElUpload} from 'element-plus';
 import { ref, Ref, defineComponent, PropType } from 'vue';
 import { UploadFile } from 'element-plus/lib/el-upload/src/upload.type';
 import { useMutableProps } from '../use/mutableProps';
-import 'element-plus/packages/theme-chalk/src/base.scss'
+
+/**
+ * Displays a file uploader, which allows drag and drop
+ */
 export default defineComponent({
   props: {
+    /** The list of files already uploaded*/
     fileList: {
       type: Array as PropType<UploadFile[]>,
       default: () => []
     }
   },
-  emits: ["update:fileList"],
+  emits: [
+    /**
+     * Push change to fileList of type `UploadFile[]`
+     * @type {UploadFile[]}
+     */
+    "update:fileList"
+  ],
   setup(props, {emit}) {
     const { fileList } = useMutableProps(props, emit)
     const onChange = (_file: UploadFile, fl: UploadFile[]) => {
-      console.log("Mesa happy")
       fileList.value = [...fl]
     }
     return {fileList, onChange}
@@ -44,7 +52,3 @@ export default defineComponent({
   components: {ElUpload}
 })
 </script>
-
-<style>
-
-</style>
