@@ -5,7 +5,7 @@
 <script lang="ts">
 import { UploadFile } from 'element-plus/lib/el-upload/src/upload.type';
 import { defineComponent } from 'vue'
-import uploadSpreadsheet from './components/uploadSpreadsheet.vue';
+import uploadSpreadsheet from '@/components/uploadSpreadsheet';
 export default defineComponent({
   name: 'App',
   components: {uploadSpreadsheet},

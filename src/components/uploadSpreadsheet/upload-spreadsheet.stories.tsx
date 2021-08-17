@@ -1,11 +1,9 @@
-import uploadSpreadsheet from '../components/uploadSpreadsheet.vue';
+import uploadSpreadsheet from './uploadSpreadsheet.vue';
 import {Story, Meta} from '@storybook/vue3';
-import { createApp } from 'vue';
 import { UploadFile } from 'element-plus/lib/el-upload/src/upload.type';
-import 'element-plus/packages/theme-chalk/src/base.scss'
 export default {
   component: uploadSpreadsheet,
-  title: "Upload Spreadsheet"
+  title: "Example/Upload Spreadsheet"
 } as Meta
 
 export const withSingleFile: Story = () => {
@@ -21,15 +19,7 @@ export const withSingleFile: Story = () => {
     status: 'success',
     uid: 47
   }
-  return {
-    template: `<upload-spreadsheet 
-      :file-list="fileList"
-    />`,
-    data() {
-      return {
-        fileList: [file]
-      }
-    },
-    components: {uploadSpreadsheet}
-  }
+  return { render:() => <uploadSpreadsheet 
+    file-list={[file]}
+  />}
 }

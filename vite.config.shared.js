@@ -1,7 +1,9 @@
 
 const styleImport = require('vite-plugin-style-import').default
+const vueJsx = require('@vitejs/plugin-vue-jsx').default
 const Path = require("path")
 module.exports.plugins = [
+  vueJsx(),
   styleImport({
     libs: [{
       libraryName: 'element-plus',
