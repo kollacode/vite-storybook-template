@@ -12,3 +12,6 @@ const asyncStoreProvider: Plugin = {
     vue.provide(acc_symbol, accessor)
   }
 }
+
+// -> Global state created/fetched
+// -> Glo

@@ -1,12 +1,19 @@
 <template>
-  Hello
+  <uploadSpreadsheet v-model:file-list="files"/>
 </template>
 
 <script lang="ts">
+import { UploadFile } from 'element-plus/lib/el-upload/src/upload.type';
 import { defineComponent } from 'vue'
-
+import uploadSpreadsheet from './components/uploadSpreadsheet.vue';
 export default defineComponent({
-  name: 'App'
+  name: 'App',
+  components: {uploadSpreadsheet},
+  data() {
+    return {
+      files: [] as UploadFile[]
+    }
+  }
 })
 </script>
 
