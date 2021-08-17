@@ -6,13 +6,16 @@ module.exports = {
   ],
   "addons": [
     "@storybook/addon-links",
-    "@storybook/addon-essentials"
+    "@storybook/addon-essentials",
+    '@storybook/addon-jest'
   ],
   "core": {
     "builder": "storybook-builder-vite",
   },
   async viteFinal(config, { configType }) {
-    Object.assign(config.resolve.alias, alias)
+    Object.assign(config.resolve.alias, alias, {
+      path: require.resolve('path-browserify'),
+    })
     config.plugins.push(...plugins)
     console.log(config.alias)
     return config;

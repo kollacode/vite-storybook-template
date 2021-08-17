@@ -7,6 +7,9 @@ export default {
   component: uploadSpreadsheet,
   title: "Example/Upload Spreadsheet",
   argTypes: { "onUpdate:fileList": { } },
+  parameters: {
+    jest: ["uploadSpreadsheet.test.tsx"]
+  }
 } as Meta
 
 const uploadTemplate: Story = (args) => {
