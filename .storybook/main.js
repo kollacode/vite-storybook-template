@@ -1,4 +1,4 @@
-const global_plugins = require("../plugins").default
+const {plugins, alias} = require("../vite.config.shared")
 module.exports = {
   "stories": [
     "../src/**/*.stories.mdx",
@@ -12,17 +12,9 @@ module.exports = {
     "builder": "storybook-builder-vite",
   },
   async viteFinal(config, { configType }) {
-
-    // customize the Vite config here
-    // config.resolve.alias.foo = 'bar';
-    console.log(global_plugins.length)
-    // return the customized config
-    return {
-      ...config,
-      plugins: [
-        ...config.plugins,
-        ...global_plugins
-      ]
-    };
+    Object.assign(config.resolve.alias, alias)
+    config.plugins.push(...plugins)
+    console.log(config.alias)
+    return config;
   },
 }

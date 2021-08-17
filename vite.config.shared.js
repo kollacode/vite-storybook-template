@@ -1,7 +1,7 @@
 
 const styleImport = require('vite-plugin-style-import').default
-
-module.exports.default = [
+const Path = require("path")
+module.exports.plugins = [
   styleImport({
     libs: [{
       libraryName: 'element-plus',
@@ -17,3 +17,7 @@ module.exports.default = [
     }]
   })
 ]
+
+module.exports.alias = {
+  "@": Path.resolve(__dirname, "src")
+}

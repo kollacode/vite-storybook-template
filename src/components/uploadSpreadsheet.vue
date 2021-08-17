@@ -22,7 +22,7 @@
 import {ElUpload} from 'element-plus';
 import { ref, Ref, defineComponent, PropType } from 'vue';
 import { UploadFile } from 'element-plus/lib/el-upload/src/upload.type';
-import { useMutableProps } from '../use/mutableProps';
+import { useMutableProps } from '@/use/mutableProps';
 
 /**
  * Displays a file uploader, which allows drag and drop
