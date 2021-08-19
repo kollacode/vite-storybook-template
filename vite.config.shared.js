@@ -7,15 +7,16 @@ module.exports.plugins = [
   styleImport({
     libs: [{
       libraryName: 'element-plus',
+      styleLibraryName: "~theme",
       esModule: true,
       ensureStyleFile: true,
       resolveStyle: (name) => {
         name = name.slice(3)
-        return `element-plus/packages/theme-chalk/src/${name}.scss`;
+        return `../src/theme/${name}.scss`;
       },
       resolveComponent: (name) => {
         return `element-plus/lib/${name}`;
-      },
+      }
     }]
   })
 ]
