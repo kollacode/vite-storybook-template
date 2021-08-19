@@ -1,29 +1,38 @@
 <template>
-  <uploadSpreadsheet v-model:file-list="files"/>
+<ElContainer>
+  <ElHeader class="header">
+    My Header
+  </ElHeader>
+  <ElMain>
+    ... And the rest...
+  </ElMain>
+</ElContainer>
 </template>
 
 <script lang="ts">
-import { UploadFile } from 'element-plus/lib/el-upload/src/upload.type';
 import { defineComponent } from 'vue'
-import uploadSpreadsheet from '@/components/uploadSpreadsheet';
+import {
+  ElContainer,
+  ElHeader,
+  ElMain,
+} from 'element-plus';
 export default defineComponent({
   name: 'App',
-  components: {uploadSpreadsheet},
+  components: {
+    ElContainer,
+    ElHeader,
+    ElMain,
+  },
   data() {
     return {
-      files: [] as UploadFile[]
+      
     }
   }
 })
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" scoped>
+.header {
+  background-color: aqua;
 }
 </style>
