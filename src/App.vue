@@ -10,29 +10,34 @@
 </template>
 
 <script lang="ts">
+export default defineComponent({
+name: 'App',
+data() {
+    return {
+      
+    }
+  },
+});
+</script>
+
+<script lang="ts" setup>
 import { defineComponent } from 'vue'
 import {
   ElContainer,
   ElHeader,
   ElMain,
 } from 'element-plus';
-export default defineComponent({
-  name: 'App',
-  components: {
-    ElContainer,
-    ElHeader,
-    ElMain,
-  },
-  data() {
-    return {
-      
-    }
-  }
-})
 </script>
 
 <style lang="scss" scoped>
+@import '@carbon/type/scss/font-family';
 .header {
-  background-color: aqua;
+  font-family: carbon--font-family('sans');
+  line-height: 54px;
+  font-weight: 300;
+  font-size: 1.5rem;
+  letter-spacing: 0px;
+  background-color: black;
+  color: white;
 }
 </style>
