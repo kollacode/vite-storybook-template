@@ -1,8 +1,6 @@
 <template>
-<ElContainer>
-  <ElHeader class="header">
-    My Header
-  </ElHeader>
+<ElContainer direction="vertical">
+  <top-nav/>
   <ElMain>
     ... And the rest...
   </ElMain>
@@ -10,6 +8,12 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from 'vue'
+import {
+  ElContainer,
+  ElMain,
+} from 'element-plus';
+import topNav from '@/components/topNav';
 export default defineComponent({
 name: 'App',
 data() {
@@ -17,27 +21,11 @@ data() {
       
     }
   },
+  components: {
+    ElContainer,
+    ElMain,
+    topNav
+  }
 });
 </script>
 
-<script lang="ts" setup>
-import { defineComponent } from 'vue'
-import {
-  ElContainer,
-  ElHeader,
-  ElMain,
-} from 'element-plus';
-</script>
-
-<style lang="scss" scoped>
-@import '@carbon/type/scss/font-family';
-.header {
-  font-family: carbon--font-family('sans');
-  line-height: 54px;
-  font-weight: 300;
-  font-size: 1.5rem;
-  letter-spacing: 0px;
-  background-color: black;
-  color: white;
-}
-</style>
