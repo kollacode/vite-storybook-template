@@ -1,3 +1,7 @@
 @import 'var.scss';
 @import 'common/transition.scss';
 @import 'icon.scss';
+
+@import '@carbon/import-once/scss/index';
+@import '@carbon/colors/scss/index';
+@import '@carbon/type/scss/index';
