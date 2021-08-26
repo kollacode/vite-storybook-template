@@ -1,0 +1,23 @@
+{
+  "Default Story Content": {
+    "body": [
+      "import {Story, Meta} from '@storybook/vue3';",
+      "import ${1:${TM_FILENAME/(.*)\\.stories\\.tsx$/$1/}} from './$1.vue';",
+      "export default {",
+      "  component: $1,",
+      "  argTypes: {},",
+      "  parameters: {",
+      "    jest: [\"$1.test.tsx\"]",
+      "  }",
+      "} as Meta",
+      "",
+      "const template: Story = (args) => {",
+      "  return {",
+      "    render: () => <$1 {...args} />",
+      "  }",
+      "}$0",
+    ],
+    "prefix": "defStory",
+    "description": "Creates a tsx story template for a story in the same directory "
+  }
+}

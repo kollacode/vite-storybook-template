@@ -1,6 +1,6 @@
 <template>
   <ElHeader class="header">
-    My Header
+    The Tool
   </ElHeader>
 </template>
 <script lang="ts">
