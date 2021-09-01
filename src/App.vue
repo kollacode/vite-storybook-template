@@ -2,7 +2,7 @@
 <ElContainer direction="vertical">
   <top-nav/>
   <ElMain>
-    ... And the rest...
+    <startPage/>
   </ElMain>
 </ElContainer>
 </template>
@@ -14,6 +14,7 @@ import {
   ElMain,
 } from 'element-plus';
 import topNav from '@/components/topNav';
+import startPage from '@/views/start';
 export default defineComponent({
 name: 'App',
 data() {
@@ -24,7 +25,8 @@ data() {
   components: {
     ElContainer,
     ElMain,
-    topNav
+    topNav,
+    startPage
   }
 });
 </script>
