@@ -4,10 +4,12 @@
     v-model:date-range="dateRange"
     v-model:text-query="textQuery"
   />
+  <EventsTable></EventsTable>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import displayFilter from '@/components/displayFilter';
+import EventsTable from '@/components/eventsTable';
 
 export default defineComponent({
   name: "start-page",
@@ -18,6 +20,7 @@ export default defineComponent({
   },
   components: {
     displayFilter,
+    EventsTable,
   }
 });
 </script>
